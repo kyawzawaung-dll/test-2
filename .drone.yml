@@ -13,7 +13,7 @@ steps:
   image: node
   commands:
   - npm install
-  - npm test
+  
 
   depends_on:
   - frontend
