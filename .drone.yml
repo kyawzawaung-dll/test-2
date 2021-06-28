@@ -1,19 +1,20 @@
 kind: pipeline
-type: docker
+name: foo
 
 steps:
-- name: backend
+- name: foo
   image: golang
   commands:
   - go build
   - go test
 
-- name: frontend
+- name: bar
   image: node
   commands:
   - npm install
-  
+  - npm test
+
 
   depends_on:
-  - frontend
-  - backend
+  - foo
+  - bar
