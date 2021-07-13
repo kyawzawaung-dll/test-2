@@ -1,20 +1,6 @@
 kind: pipeline
-name: foo
+name: default
 
 steps:
-- name: foo
-  image: golang
-  commands:
-  - go build
-  - go test
-
-- name: bar
+- name: test
   image: node
-  commands:
-  - npm install
-  - npm test
-
-
-  depends_on:
-  - foo
-  - bar
